@@ -5,7 +5,7 @@ var sbmtError = document.getElementById('form-error');
 var typeData = new Typed(".role", {
     strings: [
         "Coder",
-        "Frontend Developer",
+        "Frontend",
     ],
     loop: true,
     typeSpeed: 100,
@@ -80,3 +80,40 @@ btn.addEventListener('click', function() {
   // Then toggle (add/remove) the .dark-theme class to the body
   document.body.classList.toggle('dark-theme');  
 })
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
+ function menuOnClick() {
+   document.getElementById("menu-bar").classList.toggle("change");
+   document.getElementById("nav").classList.toggle("change");
+   document.getElementById("menu-bg").classList.toggle("change-bg");
+ }
