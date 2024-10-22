@@ -4,7 +4,7 @@ var sbmtError = document.getElementById('form-error');
 
 var typeData = new Typed(".role", {
     strings: [
-        "Coder",
+        "Programmer",
         "Frontend",
     ],
     loop: true,
@@ -117,3 +117,34 @@ function showSlides(n) {
    document.getElementById("nav").classList.toggle("change");
    document.getElementById("menu-bg").classList.toggle("change-bg");
  }
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+   // Select the skill logos and the section
+   const skillSection = document.querySelector("#skills");
+   const skillLogos = document.querySelectorAll(".skills-logo");
+
+   // Create the intersection observer
+   const observer = new IntersectionObserver(
+     (entries, observer) => {
+       entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+           // Start animation for each logo with a staggered delay
+           skillLogos.forEach((logo, index) => {
+             setTimeout(() => {
+               logo.style.opacity = "1";
+               logo.style.transform = "translateY(0)";
+             }, index * 200); // 200ms delay between each logo
+           });
+
+           // Unobserve the section once animation is triggered
+          //  observer.unobserve(skillSection);
+         }
+       });
+     },
+     { threshold: 0.2 }
+   ); // Trigger when 20% of the section is visible
+
+   // Observe the skill section
+   observer.observe(skillSection);
+ });

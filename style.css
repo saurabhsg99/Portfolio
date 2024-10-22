@@ -84,6 +84,7 @@ h1 {
 
 .logo img {
   width: 100%;
+  mix-blend-mode: multiply;
 }
 
 /* Toggle button */
@@ -95,17 +96,16 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-top: -50px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
-
 
 .btn-toggle {
   display: none;
 }
 
-label[for="btn"] {
+.toggle label[for="btn"] {
   position: absolute;
   width: calc(var(--sz) * 4);
   height: calc(var(--sz) * 2);
@@ -137,7 +137,7 @@ label[for="btn"] {
   animation: move-color 3s ease 0s 1;
 }
 
-#btn:checked + label .track:before {
+.toggle #btn:checked + label .track:before {
   left: 0%;
 }
 
@@ -178,7 +178,7 @@ label[for="btn"] {
   animation: move-thumb 3s ease 0s 1;
 }
 
-#btn:checked + label .thumb {
+.toggle #btn:checked + label .thumb {
   left: calc(
     calc(100% - calc(calc(var(--sz) * 2) - calc(var(--sz) / 3))) -
       calc(calc(var(--sz) / 10) + calc(var(--sz) / 7))
@@ -351,7 +351,6 @@ span.eye:before {
   }
 }
 
-
 /* .nav-items{
   position: sticky;
 } */
@@ -479,9 +478,9 @@ span.eye:before {
   justify-content: space-between;
   /* align-items: center; */
 
-  margin: 0rem 0px;
+  /* margin: 0rem 0px; */
   padding: 0 20px;
-  padding-bottom: 8rem;
+  padding-bottom: 4rem;
   gap: 5rem;
   background: url("images/Backgrounds/19366.jpg") no-repeat fixed center;
   /* background: url("images/Backgrounds/5166950.jpg") no-repeat fixed center; */
@@ -512,9 +511,11 @@ span.eye:before {
 }
 
 .hero-descr {
+  margin: 0 auto;
   margin-top: 1rem;
   width: 70%;
   font-weight: 500;
+  text-align: center;
 }
 
 .btn-pink {
@@ -560,6 +561,7 @@ span.eye:before {
   color: white;
   font-size: 18px;
   width: fit-content;
+  margin: 0 auto;
   /* display: inline; not working */
   /* display: inline-block; not working*/
 }
@@ -701,6 +703,7 @@ span.eye:before {
 #project {
   background: url("images/Backgrounds/2.avif") no-repeat fixed center;
   background-size: cover;
+  padding: 30px 10px;
 }
 
 .about h2 {
@@ -723,7 +726,7 @@ span.eye:before {
   /* border : 1px solid blue; */
   /* just to visualise the area */
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 40px auto;
   /* padding: 3rem 0; */
   position: relative;
 }
@@ -774,7 +777,7 @@ span.eye:before {
 }
 
 .front {
-  background-color: #e40b0b;
+  background-color: #0be445;
   background-size: cover;
   background-position: center center;
 
@@ -790,12 +793,13 @@ span.eye:before {
     backface-visibility: hidden;
     background: linear-gradient(
       40deg,
-      rgba(7, 98, 235, 0.7),
-      rgba(249, 0, 100, 0.7)
+      rgba(12, 0, 246, 0.7),
+      rgba(195, 0, 249, 0.7)
     );
   }
 
   h2 {
+    text-align: center;
     margin-bottom: 0.3em;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -804,6 +808,7 @@ span.eye:before {
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   }
 }
+/* different gradient for diff projects */
 
 .btn-group {
   display: flex;
@@ -839,8 +844,12 @@ span.eye:before {
     line-height: 1.4em;
     overflow: auto;
     color: var(--accent-color);
-    padding-right: 10px;
+    padding: 0 10px;
   }
+}
+
+.description > ul {
+  list-style: circle;
 }
 
 .project-skills-container {
@@ -922,7 +931,6 @@ img {
 
 /* Slideshow container */
 
-
 /* Next & previous buttons */
 .prev,
 .next {
@@ -996,17 +1004,6 @@ img {
   animation-duration: 1.5s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -1017,22 +1014,18 @@ img {
   }
 }
 
-
-
-
-
 #skills {
   background: url("images/Backgrounds/19366.jpg") no-repeat fixed center;
   background-size: cover;
-  padding-bottom: 10px;
+  padding: 30px 20px;
 }
 
-#skills h2{
+#skills h2 {
   color: blue;
 }
 
 .skill-container {
-  margin: 1em 1em;
+  margin: 3em 1em;
   display: flex;
   flex-wrap: wrap;
   width: 90%;
@@ -1041,8 +1034,6 @@ img {
   justify-content: center;
   align-items: center;
 }
-
-
 
 .blob-style {
   position: absolute;
@@ -1062,7 +1053,9 @@ img {
 .skills-logo {
   width: 50px;
   z-index: 2;
-  transition: transform 0.5s;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+   transform: translateY(20px); /* Moves the image slightly downward */
+   
 }
 
 .skills-logo:hover {
@@ -1070,18 +1063,76 @@ img {
 }
 
 
-#formmc{
+/* Keyframes for the fade-in and slide-up effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply different animation delays to each logo */
+.skills-logo:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.skills-logo:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.skills-logo:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.skills-logo:nth-child(5) {
+    animation-delay: 0.8s;
+}
+.skills-logo:nth-child(6) {
+    animation-delay: 1s;
+}
+.skills-logo:nth-child(7) {
+    animation-delay: 1.2s;
+}
+.skills-logo:nth-child(8) {
+    animation-delay: 1.4s;
+}
+.skills-logo:nth-child(9) {
+    animation-delay: 1.6s;
+}
+.skills-logo:nth-child(10) {
+    animation-delay: 1.8s;
+}
+.skills-logo:nth-child(11) {
+    animation-delay: 2s;
+}
+.skills-logo:nth-child(12) {
+    animation-delay: 2.2s;
+}
+.skills-logo:nth-child(13) {
+    animation-delay: 2.4s;
+}
+.skills-logo:nth-child(14) {
+    animation-delay: 2.6s;
+}
+.skills-logo:nth-child(15) {
+    animation-delay: 2.8s;
+}
+
+
+
+
+#formmc {
   background: url("images/Backgrounds/5166950.jpg") no-repeat fixed center;
   background-size: cover;
   padding-bottom: 2em;
 }
 
-#formmc>h2{
+#formmc > h2 {
   font-size: 2rem;
   text-align: center;
   padding: 10px 30px;
 }
-
 
 .form {
   display: flex;
@@ -1140,11 +1191,10 @@ img {
   font-size: 1.5rem;
 }
 
-
 footer {
   position: relative;
   /* margin: 1px auto; */
-  
+
   background-color: #343d68;
   padding: 5rem;
   /* for the height of the footer */
@@ -1157,18 +1207,23 @@ footer {
 }
 
 footer .mdi-chevron-double-up {
-    background: #e31b6d;
-    cursor: pointer;
-    font-size: 30pt;
-    height: 50px;
-    left: 0;
-    line-height: 40pt;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    top: -25px;
-    transition: background 0.5s;
-    width: 47px;
+  /* background: url('images/Backgrounds/arrow.png') no-repeat fixed contain; */
+  cursor: pointer;
+ 
+  left: 0;
+  
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  transition: background 0.5s;
+  width: 47px;
+}
+
+.mdi-chevron-double-up>img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 /* On smaller screens, decrease text size */
 /* @media only screen and (max-width: 300px) {
