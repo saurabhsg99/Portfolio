@@ -72,15 +72,6 @@ function validateForm() {
 
 
 
-// Select the button
-const btn = document.querySelector('.btn-toggle');
-
-// Listen for a click on the button
-btn.addEventListener('click', function() {
-  // Then toggle (add/remove) the .dark-theme class to the body
-  document.body.classList.toggle('dark-theme');  
-})
-
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -148,3 +139,20 @@ function showSlides(n) {
    // Observe the skill section
    observer.observe(skillSection);
  });
+
+
+
+
+
+ // JavaScript to handle the greeting message display
+window.onload = function () {
+  const greetingMessage = document.getElementById('greetingMessage');
+  
+  // Display the message after the page loads
+  greetingMessage.style.opacity = '1'; // Make it visible with the fade-in effect
+
+  // Hide the message after 5 seconds (5000 ms)
+  // setTimeout(() => {
+  //   greetingMessage.classList.add('hide-message'); // Add class to fade out
+  // }, 5000); // Change duration as needed
+};

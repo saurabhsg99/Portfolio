@@ -21,16 +21,7 @@
                 <div class="logo">
                     <img src="images/favicon.png" alt="">
                 </div>
-           
-                <div class="toggle">
-                    <input type="checkbox" class="btn-toggle" id="btn">
-                    <label for="btn">
-                        <span class="track"></span>
-                        <span class="thumb">
-                            <span class="eye"></span>
-                        </span>
-                    </label>
-                </div>
+
                 <div class="nav-items">
                     <div id="menu">
                         <div id="menu-bar" onclick="menuOnClick()">
@@ -47,29 +38,42 @@
                             </ul>
                         </nav>
                     </div>
-
                     <div class="menu-bg" id="menu-bg"></div>
                 </div>
             </div>
-            <h1>Welcome</h1>
+            <div class="greeting-message" id="greetingMessage">
+                <h1>Welcome, Explorer!</h1>
+            </div>
 
         </div>
 
 
         <!-- <div class="faded-text">User</div> -->
 
-        <div class="about" id="about">
+        <div class="project-section" id="about">
             <h2>Who Am I ?</h2>
-        </div>
-
-        <div class="hero-section">
+            <div class="hero-section">
             <div class="hero-section-left">
-                <div class="hero-heading"> </div>
                 <div class="hero-subheading">
-                    I am a <br> <span class="role"></span>
+                    I am a <span class="role"></span>
                 </div>
                 <div class="hero-descr">
-                    Myself Saurabh Gupta, a passionate coder who is currently working as a System Engineer in TCS.
+                    I am a data science enthusiast with a strong academic background in Mathematics and Scientific
+                    Computing, holding a
+                    Master’s degree from MNNIT Allahabad. My expertise spans machine learning, deep learning, and data
+                    analysis, with a
+                    focus on areas such as computer vision and natural language processing.
+
+                    I am proficient in building and optimizing AI models, and I have hands-on experience with popular
+                    tools like Python,
+                    TensorFlow, and Scikit-learn. With a passion for problem-solving and a keen interest in applying
+                    data-driven approaches,
+                    I am continuously expanding my skill set and looking for opportunities to contribute to impactful
+                    projects.
+
+                    I am actively seeking roles where I can leverage my knowledge and grow further in the field of data
+                    science. Explore my
+                    portfolio to learn more about my skills and achievements.
                 </div>
 
                 <a href="https://www.linkedin.com/in/saurabhsg99/" target="_blank" class="btn">
@@ -80,31 +84,16 @@
 
 
                 </a>
+                </div>
+          
+
+            <div class="hero-section-right">
+                <div class="user-image">
+                    <img src="./images/userAsset/UserImage.jpg" alt="">
+                </div>
+
             </div>
-
-            <!-- <div class="hero-section-right">
-                        <div class="user-image">
-                            <img src="./images/userAsset/UserImage.jpg" alt="">
-                        </div>
-                        <div class="icons icon-dots">
-                            <img src="./images/userAsset/dots.png" alt="">
-                        </div>
-                        <div class="icons icon-cube">
-                            <img src="./images/userAsset/cube.png" alt="">
-                        </div>
-                        <div class="icons icon-circle">
-                            <img src="./images/userAsset/circle.png" alt="">
-                        </div>
-                        <div class="icons icon-zigzak">
-                            <img src="./images/userAsset/zigzags.png" alt="">
-                        </div>
-                        <div class="icons icon-plus">
-                            <img src="./images/userAsset/plus.png" alt="">
-                        </div>
-        
-        
-                    </div> -->
-
+</div>
         </div>
 
 
@@ -236,7 +225,8 @@
                     <div class="card">
                         <input type="checkbox" id="card3" class="more" aria-hidden="true">
                         <div class="content">
-                            <div class="front" style="background-image: url('https://raw.githubusercontent.com/saurabhsg99/Sudoku/refs/heads/master/Screenshot%202023-07-26%20000420.png')">
+                            <div class="front"
+                                style="background-image: url('https://raw.githubusercontent.com/saurabhsg99/Sudoku/refs/heads/master/Screenshot%202023-07-26%20000420.png')">
                                 <div class="inner">
                                     <h2>Sudoku</h2>
 
@@ -279,7 +269,8 @@
                     <div class="card">
                         <input type="checkbox" id="card4" class="more" aria-hidden="true">
                         <div class="content">
-                            <div class="front" style="background-image: url('https://raw.githubusercontent.com/saurabhsg99/Sole-Ankle/refs/heads/main/Screenshot%202024-10-22%20215427.png')">
+                            <div class="front"
+                                style="background-image: url('https://raw.githubusercontent.com/saurabhsg99/Sole-Ankle/refs/heads/main/Screenshot%202024-10-22%20215427.png')">
                                 <div class="inner">
                                     <h2>Sole-Ankle Landing Page</h2>
 
@@ -322,7 +313,8 @@
                     <div class="card">
                         <input type="checkbox" id="card5" class="more" aria-hidden="true">
                         <div class="content">
-                            <div class="front" style="background-image: url('https://raw.githubusercontent.com/saurabhsg99/Portfolio-Website/refs/heads/main/Screenshot%20(200).png')">
+                            <div class="front"
+                                style="background-image: url('https://raw.githubusercontent.com/saurabhsg99/Portfolio-Website/refs/heads/main/Screenshot%20(200).png')">
                                 <div class="inner">
                                     <h2>Portfolio-Website</h2>
 
@@ -350,11 +342,13 @@
                                         <img class="project-skill" src="./images/stack/netlify.png" alt="" />
                                     </div>
                                     <div class="description">
-                                        <p>This site featuring a collection of my completed projects with a detailed description, technologies used, and a
-                                        live demo or GitHub link.
-                                        Intuitive and user-friendly design with smooth navigation.
-                                        A responsive design that adapts elegantly to different screen sizes and devices, enhancing accessibility
-                                        and user engagement..</p>
+                                        <p>This site featuring a collection of my completed projects with a detailed
+                                            description, technologies used, and a
+                                            live demo or GitHub link.
+                                            Intuitive and user-friendly design with smooth navigation.
+                                            A responsive design that adapts elegantly to different screen sizes and
+                                            devices, enhancing accessibility
+                                            and user engagement..</p>
                                     </div>
 
                                     <label for="card5" class="button return" aria-hidden="true">
