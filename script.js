@@ -4,8 +4,8 @@ var sbmtError = document.getElementById('form-error');
 
 var typeData = new Typed(".role", {
     strings: [
-        "Programmer",
-        "Frontend",
+        "Data Scientist",
+       
     ],
     loop: true,
     typeSpeed: 100,
@@ -109,6 +109,21 @@ function showSlides(n) {
    document.getElementById("menu-bg").classList.toggle("change-bg");
  }
 
+// Event listener to close the menu if clicked outside
+document.addEventListener("click", function (event) {
+  // Check if the menu is open
+  const menuIsOpen = document.getElementById("nav").classList.contains("change");
+
+  // Check if the click is outside of the menu and menu button
+  if (
+    menuIsOpen &&
+    !event.target.closest("#menu-bar") &&
+    !event.target.closest("#nav")
+  ) {
+    // Close the menu
+    menuOnClick();
+  }
+});
 
  document.addEventListener("DOMContentLoaded", function () {
    // Select the skill logos and the section

@@ -61,7 +61,6 @@ body {
   z-index: -2;
 }
 
-
 /* CSS styles for greeting message */
 
 .greeting-message {
@@ -78,7 +77,7 @@ body {
 .greeting-message h1 {
   font-size: 3rem;
   color: #ffffff;
-  font-family: 'Orbitron', sans-serif; /* You can customize the font */
+  font-family: "Orbitron", sans-serif; /* You can customize the font */
   text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
 }
 
@@ -90,53 +89,58 @@ body {
 }
 
 h1 {
-  font-size: 5rem;
+  /* font-size: 5rem; */
   color: white;
   text-shadow: 1px 1px 5px black;
   position: relative;
   top: 20%;
   left: 4%;
-  animation: shift 4s ease-in-out  alternate;
-   transform: skewX(0deg);
-   z-index: 1;
+  animation: shift 4s ease-in-out alternate;
+  transform: skewX(0deg);
+  z-index: 1;
 }
 
-
-
 @keyframes shift {
-   0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
-      transform: skewX(0deg);
-   }
-
-   41% {
-      transform: skewX(10deg);
-   }
-
-   42% {
-      transform: skewX(-10deg);
-   }
-
-   59% {
-      transform: skewX(40deg) skewY(10deg);
-   }
-
-   60% {
-      transform: skewX(-40deg) skewY(-10deg);
-   }
-
-   63% {
-      transform: skewX(10deg) skewY(-5deg);
-   }
-
-   70% {
-      transform: skewX(-50deg) skewY(-20deg);
-   }
-
-   71% {
-      transform: skewX(10deg) skewY(-10deg);
-   }
+  0%,
+  40%,
+  44%,
+  58%,
+  61%,
+  65%,
+  69%,
+  73%,
+  100% {
+    transform: skewX(0deg);
   }
 
+  41% {
+    transform: skewX(10deg);
+  }
+
+  42% {
+    transform: skewX(-10deg);
+  }
+
+  59% {
+    transform: skewX(40deg) skewY(10deg);
+  }
+
+  60% {
+    transform: skewX(-40deg) skewY(-10deg);
+  }
+
+  63% {
+    transform: skewX(10deg) skewY(-5deg);
+  }
+
+  70% {
+    transform: skewX(-50deg) skewY(-20deg);
+  }
+
+  71% {
+    transform: skewX(10deg) skewY(-10deg);
+  }
+}
 
 
 /* navbar */
@@ -147,13 +151,20 @@ h1 {
 }
 
 .logo {
-  width: 70px;
+  width: 150px;
+  margin-left: -10px;
 }
 
 .logo img {
   width: 100%;
+  filter:drop-shadow( 0 0 12px rgb(255, 255, 255));
 }
 
+/* .nav-items{
+  position: fixed;
+  top: 40%;
+  right: 0;
+} */
 /* hamburger */
 #menu {
   z-index: 2;
@@ -172,7 +183,7 @@ h1 {
   background-color: #dc052d;
   display: block;
   border-radius: 5px;
-  transition:  0.5s ease;
+  transition: 0.5s ease;
 }
 
 #bar1 {
@@ -194,7 +205,7 @@ h1 {
 
 .nav li {
   list-style: none;
-  padding: 12px 0;
+  padding: 5px 0;
 }
 
 .nav li a {
@@ -248,17 +259,9 @@ h1 {
 
 .change-bg {
   width: 320px;
-  height: 360px;
+  height: 400px;
   transform: translate(50%, -15%);
 }
-
-
-
-
-
-
-
-
 
 .faded-text {
   /* to disable the selection of text */
@@ -270,9 +273,6 @@ h1 {
   color: rgb(231, 231, 231);
   font-weight: bold;
 }
-
-
-
 
 /* Hero section */
 #about {
@@ -288,7 +288,7 @@ h1 {
   font-size: 3rem;
   font-weight: 600;
   color: rgb(179, 255, 3);
-  margin: 20px 20px;
+  margin: 0px 20px;
 }
 
 .hero-section {
@@ -309,7 +309,6 @@ h1 {
   gap: 2rem;
 }
 
-
 .role {
   color: blue;
   font-weight: 500;
@@ -327,7 +326,7 @@ h1 {
   margin-top: 1rem;
   width: 90%;
   font-weight: 500;
-  text-align:left;
+  text-align: left;
 }
 
 .btn-pink {
@@ -379,10 +378,9 @@ h1 {
 .hero-section-right {
   /* position: relative; */
   width: 60%;
-  margin-left:28%;
+  margin-left: 28%;
   margin-right: auto;
 }
-
 
 .user-image {
   /* white patti */
@@ -417,21 +415,20 @@ h1 {
   }
 }
 
-@media (min-width:1000px){
-  .hero-section{
+@media (min-width: 1000px) {
+  .hero-section {
     flex-direction: row;
     justify-content: center;
   }
 
-
-  .hero-subheading{
+  .hero-subheading {
     margin-left: 50px;
   }
-  .hero-section-left{
+  .hero-section-left {
     width: 80%;
     margin-left: 50px;
   }
-  .hero-section-right{
+  .hero-section-right {
     margin: 5em 0;
   }
 }
@@ -441,8 +438,6 @@ h1 {
   background-size: cover;
   padding: 30px 10px;
 }
-
-
 
 .project-container {
   /* border : 1px solid blue; */
@@ -459,8 +454,8 @@ h1 {
   /* min-height: ; */
   margin: 1em auto;
   perspective: 1500px;
- border-radius: 20px;
- transition: all .3s;
+  border-radius: 20px;
+  transition: all 0.3s;
   .content {
     position: relative;
     width: 100%;
@@ -471,13 +466,11 @@ h1 {
 }
 
 .card:hover {
- box-shadow: 0px 0px 20px 10px rgba(0, 255, 117, 0.30);
+  box-shadow: 0px 0px 20px 10px rgba(0, 255, 117, 0.3);
 }
 
-
-
-@media (min-height:400px) and (max-height:500px){
-  .card{
+@media (min-height: 400px) and (max-height: 500px) {
+  .card {
     height: 300px;
   }
 }
@@ -787,9 +780,101 @@ img {
   }
 }
 
-.skills-logo {
+.tooltip-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  border-radius: 10px;
+  width: 50px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.profile {
+  background: #2a2b2f;
+  border-radius: 10px 15px;
+  padding: 10px;
+  border: 1px solid rgba(11, 63, 95, 1);
+}
+
+.tooltip-container:hover .tooltip {
+  top: -150px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+ .fab:hover {
+  transform: scale(1.3);
+}
+
+.user {
+  display: flex;
+  gap: 10px;
+}
+
+.img {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 700;
+  border: 1px solid #1da1f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.img img {
+  width: 90%;
+  object-fit: contain;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1da1f2;
+  justify-content: center;
+}
+
+.about {
+  color: #ccc;
+  padding-top: 5px;
+}
+
+.fab{
+  width: 57%;
   min-width: 50px;
-  width: 7%;
+  transition: all 0.3s ease;
+}
+
+.fab img {
+  width: 100%;
+}
+
+.skills-logo {
+  min-width: 150px;
+  width: 10%;
   z-index: 2;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transform: translateY(20px); /* Moves the image slightly downward */
@@ -859,6 +944,7 @@ img {
   background: url("images/Backgrounds/5166950.jpg") no-repeat fixed center;
   background-size: cover;
   padding-bottom: 2em;
+  margin-top: 0;
 }
 
 #formmc > h2 {
@@ -959,19 +1045,8 @@ footer .mdi-chevron-double-up {
   object-fit: contain;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width : 500px) {
-  html{
+@media (min-width: 500px) {
+  html {
     font-size: 24px;
   }
 }
