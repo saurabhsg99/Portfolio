@@ -4,8 +4,8 @@ var sbmtError = document.getElementById('form-error');
 
 var typeData = new Typed(".role", {
     strings: [
-        "Data Scientist",
-       
+        "Programmer",
+        "Frontend",
     ],
     loop: true,
     typeSpeed: 100,
